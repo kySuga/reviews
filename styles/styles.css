@@ -1,0 +1,77 @@
+/* Fonts
+=========== */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Inter:400,700&display=swap");
+
+:root {
+  --color-primary: #257;
+  --color-secondary: #f1f1f1;
+  --color-tertiary: #1a1a1a;
+  --ff-primary: "Inter", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --fw-reg: 400;
+  --fw-bold: 700;
+}
+
+body {
+  font-family: var(--ff-secondary);
+  background-color: var(--color-secondary);
+  color: var(--color-tertiary);
+}
+main {
+  min-height: calc(100vh - 3rem);
+  display: grid;
+  place-items: center;
+}
+ul {
+  list-style: none;
+}
+h1 {
+  font-family: var(--ff-primary);
+  font-size: 3rem;
+  color: var(--color-tertiary);
+}
+#number {
+  margin-block-end: 1.5rem;
+  font-size: 4.5rem;
+  font-weight: var(--fw-bold);
+  line-height: 1;
+}
+.btn {
+  display: inline-block;
+  min-width: 11.4rem;
+  padding: 1rem;
+  border: 0.1rem solid var(--color-tertiary);
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.05rem;
+  background-color: var(--color-secondary);
+  color: var(--color-tertiary);
+  transition: all 0.2s;
+}
+.container {
+  text-align: center;
+}
+.btn__container {
+  display: flex;
+  gap: 1rem;
+}
+
+@media(max-width: 640px) {
+  .btn__container {
+    display: grid;
+  }
+}
+@media(min-width: 641px) {
+  h2 {
+    padding: 1rem 2rem;
+  }
+}
+@media(hover: hover) and (pointer: fine) {
+  .btn:hover,
+  .btn:focus-visible {
+    border-color: var(--color-secondary);
+    background-color: var(--color-tertiary);
+    color: var(--color-secondary);
+  }
+}
