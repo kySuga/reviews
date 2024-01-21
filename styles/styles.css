@@ -4,16 +4,23 @@
 
 :root {
   --color-primary: #257;
+  --color-primary-light: #f0f6f9;
   --color-secondary: #f1f1f1;
   --color-tertiary: #1a1a1a;
+  --color-quantiary: #0279c8;
+  --color-fff: #fff;
+  --color-000: #000;
   --ff-primary: "Inter", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --fw-reg: 400;
   --fw-bold: 700;
+  --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 body {
   font-family: var(--ff-secondary);
+  letter-spacing: 0.05rem;
   background-color: var(--color-secondary);
   color: var(--color-tertiary);
 }
@@ -22,19 +29,31 @@ main {
   display: grid;
   place-items: center;
 }
-ul {
-  list-style: none;
+header {
+  margin-block-end: 3.5rem;
 }
 h1 {
   font-family: var(--ff-primary);
-  font-size: 3rem;
+  font-size: 1.4rem;
   color: var(--color-tertiary);
 }
-#number {
-  margin-block-end: 1.5rem;
-  font-size: 4.5rem;
-  font-weight: var(--fw-bold);
-  line-height: 1;
+h1::after {
+  content: "";
+  display: block;
+  width: 10rem;
+  height: 0.3rem;
+  margin: 0.75rem auto 0;
+  background-color: var(--color-quantiary);
+}
+h2 {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+h3 {
+  margin-block-end: 1rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--color-quantiary);
 }
 .btn {
   display: inline-block;
@@ -50,28 +69,95 @@ h1 {
   transition: all 0.2s;
 }
 .container {
+  width: 80vw;
+  max-width: 39rem;
   text-align: center;
 }
-.btn__container {
-  display: flex;
-  gap: 1rem;
+.review__container {
+  min-height: 30rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  background-color: var(--color-fff);
+  box-shadow: var(--shadow-light);
+}
+.img__container {
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+  margin: 0 auto 1.5rem;
+}
+.img__container::before {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  right: -0.5rem;
+  width: 100%;
+  border-radius: 50%;
+  background-color: var(--color-quantiary);
+  /* used I believe because of OG img formatting? */
+  height: 100%;
+}
+.img__container::after {
+  content: "\f10e";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  background-color: var(--color-quantiary);
+  color: var(--color-fff);
+}
+img {
+  position: relative;
+  border-radius: 50%;
+  /* used I believe because of OG img formatting? */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#info {
+  min-height: 11rem;
+  margin-bottom: 0.75rem;
+}
+.btn__prev-btn,
+.btn__next-btn {
+  border-color: transparent;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  background-color: transparent;
+  color: var(--color-quantiary);
+  transition: all 0.2s linear;
+}
+.btn__random-btn {
+  padding: 0.25rem 0.5rem;
+  border-color: var(--color-primary);
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  transition: all 0.2s linear;
 }
 
-@media(max-width: 640px) {
-  .btn__container {
-    display: grid;
-  }
-}
 @media(min-width: 641px) {
-  h2 {
-    padding: 1rem 2rem;
+  h1 {
+    font-size: 2rem;
+  }
+  #info {
+    min-height: 7rem;
   }
 }
 @media(hover: hover) and (pointer: fine) {
-  .btn:hover,
-  .btn:focus-visible {
-    border-color: var(--color-secondary);
-    background-color: var(--color-tertiary);
-    color: var(--color-secondary);
+  .btn__random-btn:hover,
+  .btn__random-btn:focus-visible {
+    background-color: var(--color-primary);
+    color: var(--color-primary-light);
   }
 }

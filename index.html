@@ -3,31 +3,50 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Counter</title>
+    <title>Reviews</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="styles/reset-styles.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
     <main>
-      <div class="container">
-        <h1>
-          Counter
-        </h1>
-        <div id="number">
-          0
-        </div>
-        <div class="btn__container">
-          <button class="btn btn__decrease-number" id="btn__decrease">
-            Decrease Number
+      <section class="container">
+        <header>
+          <h1>
+            What Our Client’s Are Saying
+          </h1>
+        </header>
+        <article class="review__container" aria-live="polite">
+          <div class="img__container">
+            <img id="img__person" src="assets/dizzy-panda.webp" alt="Dizzy Panda.">
+          </div>
+          <h2 id="author">
+            Dizzy Panda
+          </h2>
+          <h3 id="title">
+            The Dizziest
+          </h3>
+          <p id="info">
+            stuff and stuff for days. stuff and stuff for days. stuff and stuff for days. stuff and stuff for days. stuff and stuff for days.
+          </p>
+          <div class="btn__container">
+            <button class="btn__prev-btn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="btn__next-btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+          <button class="btn__random-btn">
+            Surprise Me
           </button>
-          <button class="btn btn__reset-number" id="btn__reset">
-            Reset
-          </button>
-          <button class="btn btn__increase-number" id="btn__increase">
-            Increase Number
-          </button>
-        </div>
-      </div>
+        </article>
+      </section>
     </main>
     <script src="js/main.js"></script>
   </body>
